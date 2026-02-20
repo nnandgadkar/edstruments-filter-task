@@ -20,7 +20,7 @@ export const filterData = (data: Employee[], filters: FilterCondition[], fields:
     }, {} as Record<string, FilterCondition[]>);
 
    
-    return Object.entries(filtersByField).every(([fieldId, fieldFilters]) => {
+    return Object.entries(filtersByField).every(([_, fieldFilters]) => {
       
       return fieldFilters.some((filter) => {
         const fieldDef = fields.find(f => f.id === filter.fieldId);
